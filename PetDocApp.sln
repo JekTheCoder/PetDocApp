@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetDocApp", "PetDocApp\PetD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{B83172D0-7F0E-4954-A442-1F99E00933AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocios", "CapaNegocios\CapaNegocios.csproj", "{0EF18DF9-4954-4DFB-9210-29B2D517F10E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B83172D0-7F0E-4954-A442-1F99E00933AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83172D0-7F0E-4954-A442-1F99E00933AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83172D0-7F0E-4954-A442-1F99E00933AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF18DF9-4954-4DFB-9210-29B2D517F10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF18DF9-4954-4DFB-9210-29B2D517F10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF18DF9-4954-4DFB-9210-29B2D517F10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF18DF9-4954-4DFB-9210-29B2D517F10E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
