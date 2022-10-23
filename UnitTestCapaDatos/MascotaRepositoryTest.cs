@@ -16,7 +16,7 @@ namespace UnitTestCapaDatos
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void GetsAllMascotas()
         {
             var list = repo.GetAll();
 
@@ -24,6 +24,12 @@ namespace UnitTestCapaDatos
                 Console.WriteLine(string.Concat(item.idMascota.ToString(), " ", item.observaciones));
 
             Assert.AreNotEqual(list.Length, 0);
+        }
+
+        [TestMethod]
+        public void GetOneMascota()
+        {
+            Assert.IsNotNull(repo.GetOne(0));
         }
     }
 }
