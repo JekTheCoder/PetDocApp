@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PetDocApp
 {
-    public partial class Form1 : Form
+    public partial class Mascota : Form
     {
-        public Form1()
+        public Mascota()
         {
             InitializeComponent();
         }
@@ -23,10 +23,15 @@ namespace PetDocApp
             formulario.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void FechaHora_Tick(object sender, EventArgs e)
         {
-            Form formulario = new Mascota();
-            formulario.Show();
+            lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void lblhora_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
