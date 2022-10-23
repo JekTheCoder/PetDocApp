@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
-      <Project>{0d02f68d-0350-4c6a-94a9-085321b2c1f6}</Project>
+      <Project>{7c71f394-3075-4918-8536-24e0628586fc}</Project>
       <Name>CapaNegocios</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modelos\Modelos.csproj">
