@@ -4,11 +4,9 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    public class MascotaRepository : Repository<Mascota>
+    public class MascotaRepository : BaseRepository<Mascota>, Repository<Mascota>
     {
-        private static SqlConexion sql = SqlConexion.GetSqlConnection();
-
-        private static Mascota MapResponse(ref SqlDataReader reader)
+        protected override Mascota MapResponse(ref SqlDataReader reader)
         {
             return new Mascota
             {
@@ -22,7 +20,7 @@ namespace CapaDatos
             };
         }
 
-        private static void MapRequest(ref SqlCommand cmd, ref Mascota entity)
+        protected override void MapRequest(ref SqlCommand cmd, ref Mascota entity)
         {
             cmd.Parameters.AddWithValue("@id", entity.idMascota);
             cmd.Parameters.AddWithValue("@id_dueno", entity.idDueño);
@@ -35,56 +33,27 @@ namespace CapaDatos
 
         public bool Create(Mascota entity)
         {
-            var cmd = sql.BuildCommand("delete_mascota");
-            MapRequest(ref cmd, ref entity);
-
-            return sql.SqlExecute(() => cmd.ExecuteNonQuery());
+            return BuildCreate("create_mascota", ref entity);
         }
 
         public bool Delete(int id)
         {
-            var cmd = sql.BuildCommand("delete_mascota");
-            cmd.Parameters.AddWithValue("@id", id);
-
-            return sql.SqlExecute(() => cmd.ExecuteNonQuery());
+            return BuildDelete("delete_mascota", id);
         }
 
         public Mascota[] GetAll()
         {
-            var cmd = sql.BuildCommand("get_mascotas");
-            var mascotas = new List<Mascota>();
-
-            sql.SqlExecute(() =>
-            {
-                var reader = cmd.ExecuteReader();
-                while (reader.Read()) mascotas.Add(MapResponse(ref reader));
-            });
-
-            return mascotas.ToArray();
+            return BuildGetAll("get_mascota");
         }
 
         public Mascota GetOne(int id)
         {
-            var cmd = sql.BuildCommand("get_mascota");
-            cmd.Parameters.AddWithValue("@id", id);
-
-            Mascota mascota = null;
-
-            sql.SqlExecute(() =>
-            {
-                var reader = cmd.ExecuteReader();
-                if (reader.Read()) mascota = MapResponse(ref reader);
-            });
-
-            return mascota;
+            return BuildGetOne("get_mascota", id);
         }
 
         public bool Update(Mascota entity)
         {
-            var cmd = sql.BuildCommand("update_mascota");
-            MapRequest(ref cmd, ref entity);
-
-            return sql.SqlExecute(() => cmd.ExecuteNonQuery());
+            return BuildUpdate("update_mascota", ref entity);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    internal class SqlConexion
+    public class SqlConexion
     {
         private static SqlConexion sqlConnection;
 
