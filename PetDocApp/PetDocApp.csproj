@@ -46,16 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mascota.Designer.cs">
+      <DependentUpon>Mascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mascota.resx">
+      <DependentUpon>Mascota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,9 +98,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{b83172d0-7f0e-4954-a442-1f99e00933aa}</Project>
-      <Name>CapaDatos</Name>
+    <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
+      <Project>{7c71f394-3075-4918-8536-24e0628586fc}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{58f58f1f-483e-4d08-9aac-54702d78df65}</Project>
+      <Name>Modelos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
