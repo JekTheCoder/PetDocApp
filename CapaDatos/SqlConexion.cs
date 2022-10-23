@@ -21,7 +21,8 @@ namespace CapaDatos
             return new SqlCommand
             {
                 CommandText = command,
-                Connection = sql
+                Connection = sql,
+                CommandType = System.Data.CommandType.StoredProcedure
             };
         }
 
@@ -39,7 +40,7 @@ namespace CapaDatos
             }
             catch
             {
-                success = false;
+                success = false;    
             }
 
             return success;
