@@ -7,37 +7,37 @@ namespace CapaDatos
     {
         public bool Create(Cliente entity)
         {
-            return BuildCreate("create_cliente", ref entity);
+            return BuildCreate("insertClient", ref entity);
         }
 
         public bool Delete(int id)
         {
-            return BuildDelete("delete_cliente", id);
+            return BuildDelete("deleteClient", id);
         }
 
         public Cliente[] GetAll()
         {
-            return BuildGetAll("get_clientes");
+            return BuildGetAll("showClient");
         }
 
         public Cliente GetOne(int id)
         {
-            return BuildGetOne("get_cliente", id);
+            return BuildGetOne("showClientbyID", id);
         }
 
         public bool Update(Cliente entity)
         {
-            return BuildUpdate("update_cliente", ref entity);
+            return BuildUpdate("updateClient", ref entity);
         }
 
         protected override void MapRequest(ref SqlCommand cmd, ref Cliente entity)
         {
             cmd.Parameters.AddWithValue("@id", entity.idCliente);
-            cmd.Parameters.AddWithValue("@nombreCliente", entity.nombreCliente);
-            cmd.Parameters.AddWithValue("@apellidoCliente", entity.apellidoCliente);
-            cmd.Parameters.AddWithValue("@direccion", entity.direccion);
-            cmd.Parameters.AddWithValue("@ciudad", entity.ciudad);
-            cmd.Parameters.AddWithValue("@telefono", entity.telefono);
+            cmd.Parameters.AddWithValue("@name", entity.nombreCliente);
+            cmd.Parameters.AddWithValue("@lastName", entity.apellidoCliente);
+            cmd.Parameters.AddWithValue("@address", entity.direccion);
+            cmd.Parameters.AddWithValue("@city", entity.ciudad);
+            cmd.Parameters.AddWithValue("@phone", entity.telefono);
         }
 
         protected override Cliente MapResponse(ref SqlDataReader reader)

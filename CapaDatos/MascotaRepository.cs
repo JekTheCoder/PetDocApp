@@ -23,37 +23,37 @@ namespace CapaDatos
         protected override void MapRequest(ref SqlCommand cmd, ref Mascota entity)
         {
             cmd.Parameters.AddWithValue("@id", entity.idMascota);
-            cmd.Parameters.AddWithValue("@id_dueno", entity.idDueño);
-            cmd.Parameters.AddWithValue("@tipo_animal", entity.tipoAnimal);
-            cmd.Parameters.AddWithValue("@raza", entity.raza);
-            cmd.Parameters.AddWithValue("@sexo", entity.sexo);
-            cmd.Parameters.AddWithValue("@fecha_nacimiento", entity.fechaNacimiento);
-            cmd.Parameters.AddWithValue("@observaciones", entity.observaciones);
+            cmd.Parameters.AddWithValue("@idOwner", entity.idDueño);
+            cmd.Parameters.AddWithValue("@typePet", entity.tipoAnimal);
+            cmd.Parameters.AddWithValue("@race", entity.raza);
+            cmd.Parameters.AddWithValue("@gender", entity.sexo);
+            cmd.Parameters.AddWithValue("@birthDay", entity.fechaNacimiento);
+            cmd.Parameters.AddWithValue("@observations", entity.observaciones);
         }
 
         public bool Create(Mascota entity)
         {
-            return BuildCreate("create_mascota", ref entity);
+            return BuildCreate("insertPet", ref entity);
         }
 
         public bool Delete(int id)
         {
-            return BuildDelete("delete_mascota", id);
+            return BuildDelete("deletePet", id);
         }
 
         public Mascota[] GetAll()
         {
-            return BuildGetAll("get_mascota");
+            return BuildGetAll("showPet");
         }
 
         public Mascota GetOne(int id)
         {
-            return BuildGetOne("get_mascota", id);
+            return BuildGetOne("showPetbyID", id);
         }
 
         public bool Update(Mascota entity)
         {
-            return BuildUpdate("update_mascota", ref entity);
+            return BuildUpdate("updatePet", ref entity);
         }
     }
 }
