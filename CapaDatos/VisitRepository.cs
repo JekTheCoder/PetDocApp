@@ -14,13 +14,11 @@ namespace CapaDatos
             {
                 idVisita = reader.GetInt32(0),
                 idMascota = reader.GetInt32(1),
-                idDoctor = reader.GetInt32(2),
-                fechaVisita = reader.GetDateTime(3),
-                tipoVisita = reader.GetString(4),
-                detalles = reader.GetInt32(5),
-                precioBruto = reader.GetDecimal(6),
-                IGV = reader.GetDecimal(6),
-                preciototal = reader.GetDecimal(7)
+                observaciones = reader.GetString(2),
+                idDoctor = reader.GetInt32(3),
+                nombreDoctor = reader.GetString(4),
+                fechaVisita = reader.GetDateTime(5),
+                tipoVisita = reader.GetString(6),
             };
         }
 

@@ -9,9 +9,7 @@ namespace Modelos
         public int idDoctor { get; set; }
         public DateTime fechaVisita { get; set; }
         public string tipoVisita { get; set; }
-        public int detalles { get; set; }
-        public decimal precioBruto { get; set; }
-        public decimal IGV { get; set; }
-        public decimal preciototal { get; set; }
+        public string nombreDoctor { get; set; }
+        public string observaciones { get; set; }
     }
 }
