@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseExcelExporter.cs" />
+    <Compile Include="IExcelExporter.cs" />
+    <Compile Include="MascotaExcelExporter.cs" />
     <Compile Include="MascotaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
