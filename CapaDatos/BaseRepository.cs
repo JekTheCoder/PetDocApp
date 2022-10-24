@@ -13,6 +13,19 @@ namespace CapaDatos
     {
         protected static SqlConexion sql = SqlConexion.GetSqlConnection();
 
+        protected T[] BuildGetAll(SqlCommand cmd)
+        {
+            var entities = new List<T>();
+
+            sql.SqlExecute(() =>
+            {
+                var reader = cmd.ExecuteReader();
+                while (reader.Read()) entities.Add(MapResponse(ref reader));
+            });
+
+            return entities.ToArray();
+        }
+
         protected T BuildGetOne(string command, int id)
         {
             var cmd = sql.BuildCommand(command);
@@ -32,15 +45,7 @@ namespace CapaDatos
         protected T[] BuildGetAll(string command)
         {
             var cmd = sql.BuildCommand(command);
-            var entities = new List<T>();
-
-            sql.SqlExecute(() =>
-            {
-                var reader = cmd.ExecuteReader();
-                while (reader.Read()) entities.Add(MapResponse(ref reader));
-            });
-
-            return entities.ToArray();
+            return BuildGetAll(cmd);
         }
 
         protected bool BuildUpdate(string command, ref T entity)
