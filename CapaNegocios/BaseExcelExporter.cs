@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocios
 {
-    internal abstract class BaseExcelExporter<T> : IExcelExporter<T> where T : class
+    public abstract class BaseExcelExporter<T> : IExcelExporter<T> where T : class
     {
         private ExcelExporter exporter = new ExcelExporter();
 
