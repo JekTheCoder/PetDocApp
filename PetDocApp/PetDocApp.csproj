@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCitas.Designer.cs">
+      <DependentUpon>BuscarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarClientes.Designer.cs">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarMascotas.Designer.cs">
+      <DependentUpon>BuscarMascotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +84,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuscarCitas.resx">
+      <DependentUpon>BuscarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarClientes.resx">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarMascotas.resx">
+      <DependentUpon>BuscarMascotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
