@@ -12,9 +12,22 @@ namespace PetDocApp
 {
     public partial class BuscarClientes : Form
     {
+        Cliente cliente = new Cliente();
+        Mascota mascota = new Mascota();
+
         public BuscarClientes()
         {
             InitializeComponent();
+        }
+
+        private void ListarDatos()
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,9 +12,21 @@ namespace PetDocApp
 {
     public partial class BuscarCitas : Form
     {
+
+
         public BuscarCitas()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarCitas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
