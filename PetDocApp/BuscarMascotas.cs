@@ -16,7 +16,7 @@ namespace PetDocApp
     public partial class BuscarMascotas : Form
     {
         MascotaNegocio mascotaNegocio = new MascotaNegocio();
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-2EGFL5F;Initial Catalog=Veterinaria;Integrated Security=True");
+        
         public BuscarMascotas()
         {
             InitializeComponent();
@@ -28,18 +28,15 @@ namespace PetDocApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
+            if (!int.TryParse(textBox1.Text, out int idMascota)) return;
 
-            string consulta = "select * from Mascota where idMascota = " + textBox1.Text + "";
+            var mascota = mascotaNegocio.GetOne(idMascota);
+            if (mascota == null) return;
 
-            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conn);
-            DataTable dt = new DataTable();
-            adaptador.Fill(dt);
-            dataGridMascotas.DataSource = dt;
-            SqlCommand comando = new SqlCommand(consulta, conn);
-            SqlDataReader lector;
-            lector = comando.ExecuteReader();
-            conn.Close();
+            Modelos.Mascota[] data = { mascota };
+
+            dataGridMascotas.DataSource = data;
+            dataGridMascotas.Update();
         }
     }
 }
