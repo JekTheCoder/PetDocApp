@@ -39,6 +39,7 @@ namespace CapaDatos
         public Visit GetOne(int id)
         {
             var cmd = conexion.BuildCommand("showVisitbyID");
+            cmd.Parameters.AddWithValue("@id", id);
             Visit visit = null;
 
             conexion.SqlExecute(() =>
