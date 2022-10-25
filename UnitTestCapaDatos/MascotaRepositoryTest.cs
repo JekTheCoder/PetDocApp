@@ -31,5 +31,11 @@ namespace UnitTestCapaDatos
         {
             Assert.IsNotNull(repo.GetOne(0));
         }
+
+        [TestMethod]
+        public void ShouldNotGetMascota()
+        {
+            Assert.IsNull(repo.GetOne(255));
+        }
     }
 }

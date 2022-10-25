@@ -42,11 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseExcelExporter.cs" />
+    <Compile Include="ClienteExcelReporter.cs" />
     <Compile Include="ClienteNegocio.cs" />
     <Compile Include="IExcelExporter.cs" />
     <Compile Include="MascotaExcelExporter.cs" />
     <Compile Include="MascotaNegocio.cs" />
+    <Compile Include="MedicationExcelExporter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisitaExcelRepoter.cs" />
+    <Compile Include="VisitaNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">

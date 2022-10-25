@@ -26,11 +26,12 @@ namespace UnitTestCapaDatos
 
             var results = new List<bool>();
 
-            conexion.SqlExecute(() =>
-            {
-                var reader = cmd.ExecuteReader();
-                while (reader.Read()) results.Add(true);
-            });
+            cmd.Connection.Open();
+
+            var reader = cmd.ExecuteReader();
+            while (reader.Read()) results.Add(true);
+
+            cmd.Connection.Close();
 
             foreach (var result in results) Console.WriteLine(result);
             Assert.AreNotEqual(results.Count, 0);
