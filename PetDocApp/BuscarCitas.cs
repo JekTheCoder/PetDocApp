@@ -14,11 +14,21 @@ namespace PetDocApp
 {
     public partial class BuscarCitas : Form
     {
+        private VisitaNegocio repo = new VisitaNegocio();
         private FileExporter<Visit> exporter = new FileExporter<Visit>(new VisitaExcelRepoter());
+        private Visit[] visitas;
 
         public BuscarCitas()
         {
             InitializeComponent();
+            GetAllCitas();
+        }
+
+        private void GetAllCitas()
+        {
+            visitas = repo.GetAll();
+            dataGridViewCitas.DataSource = visitas;
+            dataGridViewCitas.Update();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,15 +49,25 @@ namespace PetDocApp
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-
+            GetAllCitas();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtSearch.Text, out int idMascota)) return;
 
+            var result = visitas.Where(visita => visita.idMascota == idMascota);
+            dataGridViewCitas.DataSource = result;
+            dataGridViewCitas.Update();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Visit> data = (IEnumerable<Visit>)dataGridViewCitas.DataSource;
+            exporter.Export(data);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
         }

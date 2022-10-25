@@ -45,19 +45,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 103);
+            this.label1.Location = new System.Drawing.Point(39, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(176, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Cita :";
+            this.label1.Text = "Buscar Cita  Por Mascota ID:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(118, 103);
+            this.txtSearch.Location = new System.Drawing.Point(42, 105);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label2
             // 
@@ -71,7 +72,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(233, 101);
+            this.btnSearch.Location = new System.Drawing.Point(160, 102);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
@@ -114,11 +115,11 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(314, 101);
+            this.btnList.Location = new System.Drawing.Point(241, 102);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 14;
-            this.btnList.Text = "Listar";
+            this.btnList.Text = "Todos";
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnListar_Click);
             // 

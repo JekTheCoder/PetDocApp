@@ -1,5 +1,6 @@
 ﻿using CapaNegocios;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PetDocApp
@@ -13,7 +14,7 @@ namespace PetDocApp
             this.exporter = exporter;   
         }
 
-        public void Export(T[] data)
+        public void Export(IEnumerable<T> data)
         {
             var filename = OpenSaveFileDialog();
             if (filename == null) return;
