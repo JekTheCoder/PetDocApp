@@ -32,8 +32,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridMascotas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -44,6 +44,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -72,16 +73,16 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre Veterinaria";
             // 
-            // dataGridView1
+            // dataGridMascotas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(723, 272);
-            this.dataGridView1.TabIndex = 14;
+            this.dataGridMascotas.AllowUserToAddRows = false;
+            this.dataGridMascotas.AllowUserToDeleteRows = false;
+            this.dataGridMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMascotas.Location = new System.Drawing.Point(42, 132);
+            this.dataGridMascotas.Name = "dataGridMascotas";
+            this.dataGridMascotas.ReadOnly = true;
+            this.dataGridMascotas.Size = new System.Drawing.Size(723, 272);
+            this.dataGridMascotas.TabIndex = 14;
             // 
             // BuscarMascotas
             // 
@@ -89,14 +90,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(250)))), ((int)(((byte)(203)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridMascotas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "BuscarMascotas";
             this.Text = "BuscarMascotas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +109,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridMascotas;
     }
 }

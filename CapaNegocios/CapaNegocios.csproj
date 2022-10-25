@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseExcelExporter.cs" />
+    <Compile Include="ClienteNegocio.cs" />
     <Compile Include="IExcelExporter.cs" />
     <Compile Include="MascotaExcelExporter.cs" />
     <Compile Include="MascotaNegocio.cs" />
@@ -57,5 +58,6 @@
       <Name>Modelos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

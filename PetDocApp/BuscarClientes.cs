@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,28 +16,40 @@ namespace PetDocApp
     {
         Cliente cliente = new Cliente();
         Mascota mascota = new Mascota();
-        MascotaNegocio mascotaneg = new MascotaNegocio();
+        ClienteNegocio clienteNegocio = new ClienteNegocio();
+
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-2EGFL5F;Initial Catalog=Veterinaria;Integrated Security=True");
+
 
         public BuscarClientes()
         {
             InitializeComponent();
-            dataGridClientes.DataSource = mascotaneg.GetAll();
-        }
-
-        private void ListarDatos()
-        {
-
+            dataGridClientes.DataSource = clienteNegocio.GetAll();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridClientes.DataSource = mascotaneg.GetAll();
+            conn.Open();
+
+            string consulta = "select * from Cliente where IdCliente = " + textBox1.Text + "";
+            
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conn);
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            dataGridClientes.DataSource = dt;
+            SqlCommand comando = new SqlCommand(consulta, conn);
+            SqlDataReader lector;
+            lector = comando.ExecuteReader();
+            conn.Close();
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new BuscarMascotas();
+            formulario.Show();
         }
     }
 }
