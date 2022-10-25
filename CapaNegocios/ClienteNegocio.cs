@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using Modelos;
+using System;
 
 namespace CapaNegocios
 {
@@ -31,5 +32,7 @@ namespace CapaNegocios
         {
             return repo.Update(cliente);
         }
+
     }
 }
+

@@ -25,7 +25,7 @@ namespace PetDocApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form formulario = new Mascota();
+            Form formulario = new BuscarClientes();
             formulario.Show();
         }
     }
