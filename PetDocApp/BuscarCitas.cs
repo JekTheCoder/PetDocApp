@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaNegocios;
+using Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,7 @@ namespace PetDocApp
 {
     public partial class BuscarCitas : Form
     {
-
+        private FileExporter<Visit> exporter = new FileExporter<Visit>(new VisitaExcelRepoter());
 
         public BuscarCitas()
         {
@@ -27,6 +29,12 @@ namespace PetDocApp
         private void BuscarCitas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnExportClick(object sender, EventArgs e)
+        {
+            Visit[] data = (Visit[])dataGridView2.DataSource;
+            exporter.Export(data);
         }
     }
 }
