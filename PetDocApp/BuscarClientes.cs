@@ -17,6 +17,7 @@ namespace PetDocApp
         Cliente cliente = new Cliente();
         Mascota mascota = new Mascota();
         ClienteNegocio clienteNegocio = new ClienteNegocio();
+        private FileExporter<Modelos.Cliente> exporter = new FileExporter<Modelos.Cliente>(new ClienteExcelReporter());
 
         public BuscarClientes()
         {
@@ -43,6 +44,12 @@ namespace PetDocApp
         {
             Form formulario = new BuscarMascotas();
             formulario.Show();
+        }
+
+        private void BtnExportarClick(object sender, EventArgs e)
+        {
+            Modelos.Cliente[] clientes = (Modelos.Cliente[])dataGridClientes.DataSource;
+            exporter.Export(clientes);
         }
     }
 }
