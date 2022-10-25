@@ -33,8 +33,23 @@ namespace PetDocApp
 
         private void BtnExportClick(object sender, EventArgs e)
         {
-            Visit[] data = (Visit[])dataGridView2.DataSource;
+            Visit[] data = (Visit[])dataGridViewCitas.DataSource;
             exporter.Export(data);
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

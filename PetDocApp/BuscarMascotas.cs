@@ -28,7 +28,7 @@ namespace PetDocApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(textBox1.Text, out int idMascota)) return;
+            if (!int.TryParse(txtSearch.Text, out int idMascota)) return;
 
             var mascota = mascotaNegocio.GetOne(idMascota);
             if (mascota == null) return;
@@ -37,6 +37,16 @@ namespace PetDocApp
 
             dataGridMascotas.DataSource = data;
             dataGridMascotas.Update();
+        }
+
+        private void BuscarMascotas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
