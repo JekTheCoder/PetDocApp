@@ -18,9 +18,6 @@ namespace PetDocApp
         Mascota mascota = new Mascota();
         ClienteNegocio clienteNegocio = new ClienteNegocio();
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-2EGFL5F;Initial Catalog=Veterinaria;Integrated Security=True");
-
-
         public BuscarClientes()
         {
             InitializeComponent();
@@ -30,19 +27,15 @@ namespace PetDocApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
+            if (!int.TryParse(textBox1.Text, out int idCliente)) return;
 
-            string consulta = "select * from Cliente where IdCliente = " + textBox1.Text + "";
-            
-            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conn);
-            DataTable dt = new DataTable();
-            adaptador.Fill(dt);
-            dataGridClientes.DataSource = dt;
-            SqlCommand comando = new SqlCommand(consulta, conn);
-            SqlDataReader lector;
-            lector = comando.ExecuteReader();
-            conn.Close();
+            var cliente = clienteNegocio.GetOne(idCliente);
+            if (cliente == null) return;
 
+            Modelos.Cliente[] data = { cliente };
+
+            dataGridClientes.DataSource = data;
+            dataGridClientes.Update();
         }
 
         
