@@ -17,29 +17,22 @@ namespace PetDocApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
+            var form = new BuscarClientes();
+            form.Show();
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var mascotasForm = new BuscarMascotas();
+            mascotasForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new BuscarCitas();
+            form.Show();
         }
     }
 }
