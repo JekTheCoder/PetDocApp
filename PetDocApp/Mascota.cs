@@ -26,17 +26,40 @@ namespace PetDocApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form formulario = new Cliente();
-            formulario.Show();
+            
         }
 
         private void FechaHora_Tick(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
-            lblfecha.Text = DateTime.Now.ToLongDateString();
+            
         }
 
         private void lblhora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

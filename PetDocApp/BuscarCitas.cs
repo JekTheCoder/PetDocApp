@@ -28,5 +28,20 @@ namespace PetDocApp
         {
 
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

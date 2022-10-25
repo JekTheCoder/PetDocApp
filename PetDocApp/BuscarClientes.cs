@@ -27,7 +27,7 @@ namespace PetDocApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(textBox1.Text, out int idCliente)) return;
+            if (!int.TryParse(txtSearch.Text, out int idCliente)) return;
 
             var cliente = clienteNegocio.GetOne(idCliente);
             if (cliente == null) return;
@@ -41,8 +41,22 @@ namespace PetDocApp
         
         private void button2_Click(object sender, EventArgs e)
         {
-            Form formulario = new BuscarMascotas();
-            formulario.Show();
+            
+        }
+
+        private void dataGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

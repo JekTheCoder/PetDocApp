@@ -19,14 +19,12 @@ namespace PetDocApp
         //HORA DEL FORMULARIO
         private void fechahora_Tick(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
-            lblfecha.Text = DateTime.Now.ToLongDateString();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form1();
-            formulario.Show();
+
         }
 
         private void lblfecha_Click(object sender, EventArgs e)
@@ -35,6 +33,21 @@ namespace PetDocApp
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
