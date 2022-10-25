@@ -38,12 +38,15 @@ namespace CapaDatos
 
                 success = true;
             }
-            catch
-            {
-                success = false;    
-            }
+            catch (SqlException) { ErrorHandle(out success); }
+            catch (InvalidOperationException) { ErrorHandle(out success); }
 
             return success;
+        }
+
+        private void ErrorHandle(out bool success)
+        {
+            success = false;
         }
     }
 }
