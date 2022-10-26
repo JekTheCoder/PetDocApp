@@ -30,27 +30,52 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(250, 9);
+            this.label1.Location = new System.Drawing.Point(409, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 31);
+            this.label1.Size = new System.Drawing.Size(154, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "\"NOMBRE DE LA VETERINARIA\"";
+            this.label1.Text = "\"Mi Patasa\"";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(673, 393);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(35, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(264, 126);
             this.button1.TabIndex = 1;
-            this.button1.Text = "PruebaVentanas";
+            this.button1.Text = "Buscar Clientes";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(654, 341);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(264, 126);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Buscar Mascotas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(350, 341);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(264, 126);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Buscar Citas";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -58,6 +83,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(250)))), ((int)(((byte)(203)))));
             this.ClientSize = new System.Drawing.Size(949, 531);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,6 +99,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

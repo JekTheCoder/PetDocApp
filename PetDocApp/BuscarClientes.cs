@@ -44,5 +44,11 @@ namespace PetDocApp
             Form formulario = new BuscarMascotas();
             formulario.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Form1();
+            formulario.Show();
+        }
     }
 }
