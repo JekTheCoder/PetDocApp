@@ -1,13 +1,5 @@
 ﻿using CapaNegocios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PetDocApp
@@ -16,6 +8,7 @@ namespace PetDocApp
     {
         ClienteNegocio clienteNegocio = new ClienteNegocio();
         private FileExporter<Modelos.Cliente> exporter = new FileExporter<Modelos.Cliente>(new ClienteExcelReporter());
+        Cliente modal;
 
         public BuscarClientes()
         {
@@ -43,9 +36,31 @@ namespace PetDocApp
             
         }
 
+        private void ShowCliente()
+        {
+            if (modal == null)
+            {
+                modal = new Cliente();
+                modal.Show();
+            };
+
+            if (modal.IsDisposed)
+            {
+                modal = null;
+                ShowCliente();
+            }
+        }
+
         private void dataGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int i = e.RowIndex;
+            var data = (Modelos.Cliente[])dataGridClientes.DataSource;
+            var cliente = data[i];
 
+            if (cliente == null) return;
+
+            ShowCliente();
+            modal.SetData(cliente);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -66,9 +81,14 @@ namespace PetDocApp
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            txtSearch.Text = String.Empty;
+            txtSearch.Text = string.Empty;
             dataGridClientes.DataSource = clienteNegocio.GetAll();
             dataGridClientes.Update();
+        }
+
+        private void btnOpenDialog_Click(object sender, EventArgs e)
+        {
+            ShowCliente();
         }
     }
 }

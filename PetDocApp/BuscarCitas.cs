@@ -57,7 +57,10 @@ namespace PetDocApp
             if (!int.TryParse(txtSearch.Text, out int idMascota)) return;
 
             var result = visitas.Where(visita => visita.idMascota == idMascota);
-            dataGridViewCitas.DataSource = result;
+
+            var arr = result.ToArray();
+
+            dataGridViewCitas.DataSource = arr;
             dataGridViewCitas.Update();
         }
 

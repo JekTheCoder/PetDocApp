@@ -35,6 +35,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
+            this.btnOpenDialog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             this.dataGridClientes.ReadOnly = true;
             this.dataGridClientes.Size = new System.Drawing.Size(723, 257);
             this.dataGridClientes.TabIndex = 7;
-            this.dataGridClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellContentClick);
+            this.dataGridClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellContentClick);
             // 
             // btnSearch
             // 
@@ -108,12 +109,23 @@
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
+            // btnOpenDialog
+            // 
+            this.btnOpenDialog.Location = new System.Drawing.Point(420, 94);
+            this.btnOpenDialog.Name = "btnOpenDialog";
+            this.btnOpenDialog.Size = new System.Drawing.Size(95, 22);
+            this.btnOpenDialog.TabIndex = 17;
+            this.btnOpenDialog.Text = "Nuevo/Eliminar";
+            this.btnOpenDialog.UseVisualStyleBackColor = true;
+            this.btnOpenDialog.Click += new System.EventHandler(this.btnOpenDialog_Click);
+            // 
             // BuscarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnOpenDialog);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.btnSearch);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.Button btnOpenDialog;
     }
 }

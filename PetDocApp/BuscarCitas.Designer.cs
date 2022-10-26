@@ -33,9 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridViewCitas = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.citas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnList = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCitas)).BeginInit();
@@ -85,33 +82,11 @@
             this.dataGridViewCitas.AllowUserToAddRows = false;
             this.dataGridViewCitas.AllowUserToDeleteRows = false;
             this.dataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.nombre,
-            this.citas});
             this.dataGridViewCitas.Location = new System.Drawing.Point(33, 157);
             this.dataGridViewCitas.Name = "dataGridViewCitas";
             this.dataGridViewCitas.ReadOnly = true;
             this.dataGridViewCitas.Size = new System.Drawing.Size(734, 252);
             this.dataGridViewCitas.TabIndex = 13;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // citas
-            // 
-            this.citas.HeaderText = "Citas";
-            this.citas.Name = "citas";
-            this.citas.ReadOnly = true;
             // 
             // btnList
             // 
@@ -162,9 +137,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dataGridViewCitas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn citas;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnExportar;
     }
