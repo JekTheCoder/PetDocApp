@@ -19,20 +19,23 @@ namespace PetDocApp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form formulario = new BuscarClientes();
-            formulario.Show();
+            Program.form1.Hide();
+            BuscarClientes buscarclientes = new BuscarClientes();
+            buscarclientes.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form formulario = new BuscarCitas();
-            formulario.Show();
+            Program.form1.Hide();
+            BuscarCitas buscarcitas = new BuscarCitas();
+            buscarcitas.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form formulario = new BuscarMascotas();
-            formulario.Show();
+            Program.form1.Hide();
+            BuscarMascotas buscarmascotas = new BuscarMascotas();
+            buscarmascotas.Show();
         }
     }
 }

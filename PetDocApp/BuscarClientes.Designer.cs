@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -36,6 +37,9 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +99,7 @@
             this.btnExportar.TabIndex = 12;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // label3
             // 
@@ -115,12 +120,41 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // lblhora
+            // 
+            this.lblhora.AutoSize = true;
+            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblhora.Location = new System.Drawing.Point(580, 9);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(14, 16);
+            this.lblhora.TabIndex = 43;
+            this.lblhora.Text = "h";
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblfecha.Location = new System.Drawing.Point(525, 42);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(10, 16);
+            this.lblfecha.TabIndex = 42;
+            this.lblfecha.Text = "f";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // BuscarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(250)))), ((int)(((byte)(203)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblhora);
+            this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnExportar);
@@ -131,6 +165,7 @@
             this.Controls.Add(this.label2);
             this.Name = "BuscarClientes";
             this.Text = "BuscarClientes";
+            this.Load += new System.EventHandler(this.BuscarClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,5 +182,8 @@
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblhora;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Timer timer1;
     }
 }

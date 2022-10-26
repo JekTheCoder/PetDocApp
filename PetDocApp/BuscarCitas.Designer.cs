@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,6 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 72);
+            this.label1.Location = new System.Drawing.Point(30, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 0;
@@ -52,7 +56,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 72);
+            this.textBox1.Location = new System.Drawing.Point(97, 90);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
@@ -69,7 +73,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(219, 68);
+            this.button1.Location = new System.Drawing.Point(219, 86);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -82,7 +86,7 @@
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(33, 120);
+            this.dataGridView2.Location = new System.Drawing.Point(33, 137);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(723, 272);
@@ -91,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(615, 76);
+            this.label3.Location = new System.Drawing.Point(615, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 19;
@@ -100,7 +104,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(681, 72);
+            this.button2.Location = new System.Drawing.Point(681, 90);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
@@ -116,6 +120,34 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Exportar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lblhora
+            // 
+            this.lblhora.AutoSize = true;
+            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblhora.Location = new System.Drawing.Point(605, 9);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(14, 16);
+            this.lblhora.TabIndex = 45;
+            this.lblhora.Text = "h";
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblfecha.Location = new System.Drawing.Point(550, 42);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(10, 16);
+            this.lblfecha.TabIndex = 44;
+            this.lblfecha.Text = "f";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // BuscarCitas
             // 
@@ -123,6 +155,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(250)))), ((int)(((byte)(203)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblhora);
+            this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -150,5 +184,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblhora;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Timer timer1;
     }
 }

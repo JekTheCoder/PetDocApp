@@ -47,8 +47,53 @@ namespace PetDocApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form1();
-            formulario.Show();
+            this.Close();
+            Program.form1.Show();
+            //Form formulario = new Form1();
+            //formulario.Show();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = null;
+            worksheet = workbook.Sheets["hoja1"];
+            worksheet = workbook.ActiveSheet;
+            worksheet.Name = "CustomerDetail";
+
+
+            for (int i = 1; i < dataGridClientes.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[i, 1] = dataGridClientes.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < dataGridClientes.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridClientes.Columns.Count; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1] = dataGridClientes.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            var saveFile = new SaveFileDialog();
+            saveFile.FileName = "output";
+            saveFile.DefaultExt = ".xlsx";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFile.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+            }
+            app.Quit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void BuscarClientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

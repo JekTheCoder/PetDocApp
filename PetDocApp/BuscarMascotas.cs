@@ -44,8 +44,10 @@ namespace PetDocApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form1();
-            formulario.Show();
+            this.Close();
+            Program.form1.Show();
+            //Form formulario = new Form1();
+            //formulario.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -78,6 +80,17 @@ namespace PetDocApp
 
             }
             app.Quit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void BuscarMascotas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
