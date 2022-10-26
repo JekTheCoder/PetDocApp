@@ -16,6 +16,7 @@ namespace PetDocApp
     public partial class BuscarMascotas : Form
     {
         MascotaNegocio mascotaNegocio = new MascotaNegocio();
+        FileExporter<Modelos.Mascota> exporter = new FileExporter<Modelos.Mascota>(new MascotaExcelExporter());
         
         public BuscarMascotas()
         {
@@ -46,7 +47,14 @@ namespace PetDocApp
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
+            var data = (IEnumerable<Modelos.Mascota>)dataGridMascotas.DataSource;
+            exporter.Export(data);
+        }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            dataGridMascotas.DataSource = mascotaNegocio.GetAll();
+            dataGridMascotas.Update();
         }
     }
 }

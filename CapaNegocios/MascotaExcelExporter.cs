@@ -12,9 +12,9 @@ namespace CapaNegocios
             dataRow["idDueño"] = item.idDueño;
             dataRow["tipoAnimal"] = item.tipoAnimal;
             dataRow["raza"] = item.raza;
-            dataRow["sezo"] = item.sexo;
+            dataRow["sexo"] = item.sexo;
             dataRow["Fecha Nacimiento"] = item.fechaNacimiento;
-            dataRow["Observaciones"] = item.fechaNacimiento;
+            dataRow["Observaciones"] = item.observaciones;
         }
 
         protected override DataTable BuildTable()
