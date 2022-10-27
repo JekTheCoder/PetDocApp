@@ -7,6 +7,7 @@ namespace CapaDatos
     public class SqlConexion
     {
         private static SqlConexion sqlConnection;
+        private static int[] AllowedSqlExceptions = { 2061, 2627 };
 
         public static SqlConexion GetSqlConnection()
         {
@@ -28,17 +29,27 @@ namespace CapaDatos
 
         public bool SqlExecute(Action action)
         {
-            bool success;
+            bool success = false;
 
             try
             {
                 sql.Open();
                 action();
                 sql.Close();
-
                 success = true;
             }
-            catch (SqlException) { ErrorHandle(out success); }
+            catch (SqlException e) {
+                var notAllowedError = true;
+
+                foreach(var code in AllowedSqlExceptions) 
+                    if (e.Number == code)
+                    {
+                        notAllowedError = false;
+                        ErrorHandle(out success);
+                    }
+
+                if (notAllowedError) throw e;
+            }
             catch (InvalidOperationException) { ErrorHandle(out success); }
 
             return success;

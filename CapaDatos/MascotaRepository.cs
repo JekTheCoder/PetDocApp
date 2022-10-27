@@ -26,7 +26,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@idOwner", entity.idDueño);
             cmd.Parameters.AddWithValue("@typePet", entity.tipoAnimal);
             cmd.Parameters.AddWithValue("@race", entity.raza);
-            cmd.Parameters.AddWithValue("@gender", entity.sexo);
+            cmd.Parameters.AddWithValue("@gender", entity.sexo.ToString());
             cmd.Parameters.AddWithValue("@birthDay", entity.fechaNacimiento);
             cmd.Parameters.AddWithValue("@observations", entity.observaciones);
         }
@@ -53,7 +53,7 @@ namespace CapaDatos
 
         public bool Update(Mascota entity)
         {
-            return BuildUpdate("updatePet", ref entity);
+            return BuildUpdate("updatetPet", ref entity);
         }
     }
 }

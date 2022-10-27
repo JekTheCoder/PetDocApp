@@ -68,11 +68,6 @@ namespace PetDocApp
 
         }
 
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnExportarClick(object sender, EventArgs e)
         {
             Modelos.Cliente[] clientes = (Modelos.Cliente[])dataGridClientes.DataSource;

@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,8 @@ namespace PetDocApp
     {
         MascotaNegocio mascotaNegocio = new MascotaNegocio();
         FileExporter<Modelos.Mascota> exporter = new FileExporter<Modelos.Mascota>(new MascotaExcelExporter());
-        
+        Mascota modal;
+
         public BuscarMascotas()
         {
             InitializeComponent();
@@ -25,6 +27,21 @@ namespace PetDocApp
             dataGridMascotas.DataSource = mascotaNegocio.GetAll();
 
             
+        }
+
+        private void ShowMascotaDialog()
+        {
+            if (modal == null)
+            {
+                modal = new Mascota();
+                modal.Show();
+            };
+
+            if (modal.IsDisposed)
+            {
+                modal = null;
+                ShowMascotaDialog();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,6 +72,30 @@ namespace PetDocApp
         {
             dataGridMascotas.DataSource = mascotaNegocio.GetAll();
             dataGridMascotas.Update();
+        }
+
+        private void dataGridMascotas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            var data = (Modelos.Mascota[])dataGridMascotas.DataSource;
+            Modelos.Mascota cliente;
+            try
+            {
+                cliente = data[i];
+            } catch
+            {
+                return;
+            }
+
+            if (cliente == null) return;
+
+            ShowMascotaDialog();
+            modal.SetData(cliente);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ShowMascotaDialog();
         }
     }
 }

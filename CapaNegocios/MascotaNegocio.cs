@@ -16,5 +16,20 @@ namespace CapaNegocios
         {
             return repository.GetAll();
         }
+
+        public bool Update(Mascota mascota)
+        {
+            return repository.Update(mascota);
+        }
+
+        public bool Create(Mascota mascota)
+        {
+            return repository.Create(mascota);
+        }
+
+        public bool Delete(int id)
+        {
+            return repository.Delete(id);
+        }
     }
 }

@@ -35,6 +35,7 @@
             this.dataGridMascotas = new System.Windows.Forms.DataGridView();
             this.btnExportar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +86,7 @@
             this.dataGridMascotas.ReadOnly = true;
             this.dataGridMascotas.Size = new System.Drawing.Size(723, 272);
             this.dataGridMascotas.TabIndex = 14;
+            this.dataGridMascotas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMascotas_CellDoubleClick);
             // 
             // btnExportar
             // 
@@ -106,12 +108,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(425, 90);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 24);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Nuevo/Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // BuscarMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dataGridMascotas);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.DataGridView dataGridMascotas;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -83,7 +83,7 @@ namespace PetDocApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            repo.Update(BuildCliente());
+            if (!repo.Update(BuildCliente())) lblError.Text = "No se pudo actualizar";
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
